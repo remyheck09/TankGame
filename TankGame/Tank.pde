@@ -9,7 +9,7 @@ class Tank {
     y=100;
     w=100;
     h=100;
-    speed=10;
+    speed=20;
     health=100;
     t1=loadImage("tank.png");
     t2=loadImage("tank2.png");
@@ -46,5 +46,13 @@ class Tank {
       idir = 'd';
       x = x + speed;
     }
+  }
+  boolean intersect(Obstacle o) {
+   float distance = dist(x,y,o.x, o.y);
+   if (distance < 100) {
+   return true; 
+   } else {
+   return false;
+   }
   }
 }
